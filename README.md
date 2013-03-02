@@ -12,6 +12,9 @@ means it does not modify how Minetest works in any way, but provides a useful
 API to help mods do so.  This particular library is used purely for managing
 the loading of other libraries, and has no dependencies.
 
+Author: prestidigitator (as registered at forum.minetest.net)
+Copyright: 2013, licensed under WTFPL
+
 Installation
 ============
 
