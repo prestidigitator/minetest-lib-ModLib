@@ -10,14 +10,19 @@ local ModLib = dofile(BASE_DIR.."/lib/ModLib.lua")
 ModLib.addDir(BASE_DIR.."/lib")
 ModLib.addDir(BASE_DIR.."/test/lib")
 
+local ModLib2 = dofile(BASE_DIR.."/lib/ModLib.lua")
+assert(ModLib2 == ModLib)
+
 assert(not pcall(ModLib.load, "Zoog"))
 
 local MyLib1 = ModLib.load("MyLib", "1", "1")
 local MyLib1b = ModLib.load("MyLib", "1.0", "1.0")
+local MyLib1c = ModLib2.load("MyLib", "1", "1")
 
 assert(MyLib1)
 assert(MyLib1b)
 assert(MyLib1 == MyLib1b)
+assert(MyLib1 == MyLib1c)
 assert("1" == MyLib1.VERSION)
 assert("1.0" == MyLib1.v)
 

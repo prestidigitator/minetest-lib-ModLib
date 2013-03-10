@@ -7,7 +7,7 @@ local THIS_LIB_NAME = "ModLib"
 
 -- Constants for THIS version
 
-local THIS_VERSION_STR = "1.0"
+local THIS_VERSION_STR = "1.1"
 
 local LIB_NAME_PATT = "^[a-zA-Z][a-zA-Z0-9]*$"
 
@@ -345,4 +345,5 @@ local function ModLib_addDir(dir)
 end
 ModLib.addDir = ModLib_addDir
 
+modLibVersionsByValue[tostring(THIS_VERSION)] = ModLib
 return ModLib
