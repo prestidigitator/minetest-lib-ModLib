@@ -83,17 +83,18 @@ ModLib 1.0 and MyLib 2.3 this would look like:
    -- Add to the library path:
    ModLib.addDir(MOD_PATH.."/lib")
 
-   -- Load the dependent library.  Note that this MyLib 2.3 OR LATER.  If the
-   -- exact version were required, or if a range of versions were acceptable,
-   -- then a second (maximum) version number would be added to the call.
+   -- Load the dependent library.  Note that this requires MyLib 2.3 OR LATER.
+   -- If the exact version were required, or if a range of versions were
+   -- acceptable, then a second (maximum) version number would be added to the
+   -- call.
    local MyLib = ModLib.load("MyLib", "2.3")
 
 Note carefully the use of local variable rather than globals.  This MUST always
 be how a mod or library loads another library, in order to allow multiple
-versions to coexist.  Note, however, that you may add the module API as a field
-of the module's own API in order to use it from other files or even other mods
-(see the note above about libraries included by dependent mods).  So my_mod
-could then do this:
+versions to coexist.  Note, however, that you may add the library's API as a
+field of the mod's own API in order to use it from other files or even other
+mods (see the note above about libraries included by dependent mods).  So
+my_mod could then do this:
 
    my_mod.MyLib = MyLib
 
